@@ -19,8 +19,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseClass {
 
 	public static WebDriver driver;
-	public static Actions actions;
-	public static TakesScreenshot takes;
+	public static Actions actions = new Actions(driver);
+	public static TakesScreenshot takes = (TakesScreenshot) driver;
 
 	public void browserLaunch(String searchEngine) {
 		if (searchEngine.equalsIgnoreCase("chrome")) {
